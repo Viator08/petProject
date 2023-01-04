@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "docz": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -16,7 +17,10 @@
     "dev": "NODE_ENV=development webpack serve --config webpack.config.js",
     "build:prod": "NODE_ENV=production webpack --config webpack.config.js",
     "build": "NODE_ENV=development webpack --config webpack.config.js",
-    "build:watch": "NODE_ENV=development node ./node_modules/webpack/bin/webpack.js --config webpack.config.js --watch"
+    "build:watch": "NODE_ENV=development node ./node_modules/webpack/bin/webpack.js --config webpack.config.js --watch",
+    "docz:dev": "docz dev",
+    "docz:build": "docz build",
+    "docz:serve": "docz build && docz serve"
   },
   "eslintConfig": {
     "extends": [
@@ -47,6 +51,7 @@
     "effector-react": "^22.1.6",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.2",
+    "prettier": "^2.8.1",
     "sass": "^1.57.1",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
