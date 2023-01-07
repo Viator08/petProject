@@ -1,0 +1,129 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "prettier",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:effector/recommended",
+    "plugin:effector/react",
+    "plugin:effector/future"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "jest",
+    "react",
+    "react-hooks",
+    "simple-import-sort",
+    "import",
+    "effector"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": [
+      2,
+      {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    ],
+    "no-console": "error",
+    "no-plusplus": "error",
+    "no-empty": [
+      "error",
+      {
+        "allowEmptyCatch": true
+      }
+    ],
+    "no-extra-boolean-cast": "error",
+    "no-implicit-coercion": "error",
+    "no-duplicate-imports": "error",
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          [
+            "^\\u0000"
+          ],
+          [
+            "^react",
+            "^\\w"
+          ],
+          [
+            "^(@fcc|@mf)(/.*|$)"
+          ],
+          [
+            "^(@tfo)(/.*|$)"
+          ],
+          [
+            "^(@tfo-lk|@tfo-lk-admin|@dgp|@dgp-application|@dgp-guarantee|@dgp-agreement|@tf-doc)(/.*|$)"
+          ],
+          [
+            "^\\.\\.(?!/?$)",
+            "^\\.\\./?$"
+          ],
+          [
+            "^\\./(?=.*/)(?!/?$)",
+            "^\\.(?!/?$)",
+            "^\\./?$"
+          ],
+          [
+            "^\\u0000\\.\\.(?!/?$)",
+            "^\\u0000\\.(?!/?$)"
+          ]
+        ]
+      }
+    ],
+    "simple-import-sort/exports": "error",
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-default-export": "error",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/ban-ts-comment": 0,
+    "@typescript-eslint/no-empty-function": 0,
+    "react/jsx-key": "error",
+    "react/jsx-curly-brace-presence": [
+      "error",
+      {
+        "props": "never",
+        "children": "never"
+      }
+    ],
+    "arrow-body-style": [
+      "error",
+      "as-needed"
+    ],
+    "dot-notation": "error",
+    "object-shorthand": [
+      "error",
+      "always"
+    ],
+    "no-unneeded-ternary": [
+      "error",
+      {
+        "defaultAssignment": false
+      }
+    ],
+    "no-nested-ternary": "error"
+  },
+  "parser": "@babel/eslint-parser"
+}
