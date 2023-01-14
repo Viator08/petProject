@@ -1,9 +1,11 @@
 export interface ButtonProps {
   label: string;
-  type: 'Primary' | 'Secondary' | 'Dashed' | 'Link' | 'Text';
-  size: 'Medium' | 'Large' | 'Small';
-  condition: 'Hover/Pressed' | 'Active' | 'Animating' | 'Disabled';
-  template: 'Standard' | 'Dangerous' | 'Circle' | 'Square' | 'Ghost';
+  type: 'primary' | 'secondary' | 'dashed' | 'link' | 'text';
+  shape: 'standard' | 'circle' | 'square';
+  size: 'medium' | 'large' | 'small';
+  state: 'normal' | 'hover/pressed' | 'active' | 'animating' | 'disabled';
+  danger: boolean;
+  ghost: boolean;
   event?: Event;
   href?: string;
   loading?: boolean;

@@ -1,3 +1,47 @@
+@import "../../styles/base";
+
 .buttonTest {
-  background: blue;
+  width: 104px;
+  height: 32px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.primary {
+  border: 1px solid $primary-6;
+  background: $primary-6;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+  border-radius: 2px;
+
+  .text {
+    color: white;
+  }
+}
+
+.secondary {
+  .text {
+    color: white;
+  }
+}
+
+.dashed {
+  .text {
+    color: white;
+  }
+}
+
+.button-link {
+  .text {
+    color: white;
+  }
+}
+
+.button-text {
+  .text {
+    color: white;
+  }
 }
