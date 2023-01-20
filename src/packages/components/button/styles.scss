@@ -1,47 +1,228 @@
-@import "../../styles/base";
+@use "../../styles/base";
 
-.buttonTest {
-  width: 104px;
-  height: 32px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  cursor: pointer;
+.btn {
+  @include base.flexCenter();
+  margin: 2px;
 }
 
 .primary {
-  border: 1px solid $primary-6;
-  background: $primary-6;
-  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
-  border-radius: 2px;
+  &.normal {
+    &.isActive {
+      border: 1px solid base.$primary;
+      background: base.$primary;
+      box-shadow: 0px 2px 0px base.$shadow043;
+      color: base.$whiteText;
 
-  .text {
-    color: white;
+      &:hover {
+        background: base.$primary-5;
+      }
+
+      &:active {
+        background: base.$primary-7;
+        transform: scale(0.96);
+      }
+    }
+
+    &.isDisable {
+      background: base.$grayBackground;
+      border: 1px solid base.$grayBorder;
+    }
+  }
+
+  &.danger {
+    &.isActive {
+      background: base.$dangerPrimary;
+      box-shadow: 0px 2px 0px base.$shadow043;
+      color: base.$whiteText;
+
+      &:hover {
+        background: base.$dangerPrimary-4;
+      }
+
+      &:active {
+        background: base.$dangerPrimary-6;
+        transform: scale(0.96);
+      }
+    }
+
+    &.isDisable {
+      background: base.$grayBackground;
+      border: 1px solid base.$grayBorder;
+    }
+  }
+
+  &.ghost {
+    &.isActive {
+      border: 1px solid base.$primary;
+      color: base.$primary;
+
+      &:hover {
+        background: base.$primary-5;
+        color: base.$primary-5;
+      }
+
+      &:active {
+        background: base.$primary-7;
+        transform: scale(0.96);
+      }
+    }
+
+    &.isDisable {
+      background: base.$grayBackground;
+      border: 1px solid base.$grayBorder;
+    }
   }
 }
+
 
 .secondary {
-  .text {
-    color: white;
+  &.normal {
+    &.isActive {
+      border: 1px solid base.$grayBorder;
+      background: white;
+      box-shadow: 0px 2px 0px base.$shadow016;
+      color: base.$blackText;
+
+      &:hover {
+        border: 1px solid base.$grayBorder;
+        background: white;
+        box-shadow: 0px 2px 0px base.$shadow016;
+        color: base.$blackText;
+      }
+
+      &:active {
+        background: base.$primary-7;
+        transform: scale(0.96);
+      }
+    }
+
+    &.isDisable {
+      background: base.$grayBackground;
+      border: 1px solid base.$grayBorder;
+    }
+  }
+
+
+  &.danger {
+    &.isActive {
+      background: white;
+      border: 1px solid base.$dangerPrimary;
+      box-shadow: 0px 2px 0px base.$shadow016;
+      color: base.$dangerPrimary;
+
+      &:hover {
+        border: 1px solid base.$dangerPrimary-4;
+        color: base.$dangerPrimary-4;
+      }
+
+      &:active {
+        border: 1px solid base.$dangerPrimary-4;
+        color: base.$dangerPrimary-4;
+        transform: scale(0.96);
+      }
+    }
+
+    &.isDisable {
+      background: base.$grayBackground;
+      border: 1px solid base.$grayBorder;
+    }
+  }
+
+
+  &.ghost {
+    &.isActive {
+      border: white;
+      color: white;
+
+      &:hover {
+        border: base.$primary-5;
+        color: base.$primary-5;
+      }
+
+      &:active {
+        border: base.$primary-7;
+        color: base.$primary-7;
+        transform: scale(0.96);
+      }
+    }
+
+    &.isDisable {
+      border: 1px solid base.$grayBorder;
+    }
   }
 }
 
-.dashed {
-  .text {
-    color: white;
+.link {
+  &.normal {
+    &.isActive {
+      color: base.$primary;
+
+      &:active {
+        color: base.$primary-7;
+      }
+    }
+  }
+
+  &.danger {
+    &.isActive {
+      color: base.$dangerPrimary;
+
+      &:active {
+        color: base.$dangerPrimary-4;
+      }
+    }
+  }
+
+
+  &.ghost {
+    &.isActive {
+      color: base.$primary;
+
+      &:hover {
+        color: base.$primary-5;
+      }
+
+      &:active {
+        color: base.$primary-7;
+      }
+    }
   }
 }
 
-.button-link {
-  .text {
-    color: white;
-  }
+.isDisable {
+  color: base.$grayText;
 }
 
-.button-text {
-  .text {
-    color: white;
-  }
+
+.shape-standard {
+  border-radius: 2px;
 }
+
+.shape-circle {
+  border-radius: 100px;
+}
+
+.isActiveAndNotLoading {
+  cursor: pointer;
+}
+
+.isDisabledOrLoading {
+  cursor: default;
+}
+
+.size-medium {
+  height: 32px;
+  padding: 4px 15px;
+}
+
+.size-large {
+  height: 40px;
+  padding: 6px 15px;
+}
+
+.size-small {
+  height: 22px;
+  padding: 0px 7px;
+}
+
+

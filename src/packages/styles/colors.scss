@@ -155,25 +155,17 @@ $primary-8: $blue-8;
 $primary-9: $blue-9;
 $primary-10: $blue-10;
 
-$link: $blue-6;
 $success: $green-6;
 $warning: $gold-6;
-$error: $dust-red-5;
+$dangerPrimary: $dust-red-5;
+$dangerPrimary-4: $dust-red-4;
+$dangerPrimary-6: $dust-red-6;
 
-$title-lt: $gray-10;
-$primaryText-lt: $gray-10;
-$secondaryText-lt: $gray-6;
-$disableText-lt: $gray-5;
-$border-lt: $gray-4;
-$dividers-lt: $gray-3;
-$background-lt: $gray-2;
-$tableHeader-lt: $gray-1;
-
-$title-dt: $gray-4;
-$primaryText-dt: $gray-4;
-$secondaryText-dt: $gray-7;
-$disableText-dt: $gray-8;
-$border-dt: $gray-9;
-$dividers-dt: $gray-11;
-$background-dt: $gray-12;
-$tableHeader-dt: $gray-13;
+$primary: $primary-6;
+$blackText: rgba(0, 0, 0, 0.85);
+$whiteText: white;
+$grayText: rgba(0, 0, 0, 0.25);
+$grayBackground: $gray-3;
+$grayBorder: $gray-5;
+$shadow043: rgba(0, 0, 0, 0.043);
+$shadow016: rgba(0, 0, 0, 0.016);
