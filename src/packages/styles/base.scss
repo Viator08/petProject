@@ -1,6 +1,8 @@
 @import "colors";
 @import "mixins";
+@import "fonts";
 
-.appbody {
-  @include flexCenter();
+body {
+  font-family: Roboto;
+  font-weight: 400;
 }

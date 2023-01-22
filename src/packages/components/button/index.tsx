@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import './styles.scss';
 import { ButtonProps } from './typings';
 import { uniqueId } from 'lodash';
@@ -14,40 +14,27 @@ export const Button: React.FC<ButtonProps> = ({
   state = 'normal',
   isDisabled = false,
 }: ButtonProps) => {
-  const ref: React.MutableRefObject<null> = useRef(null);
-
-  const [btnLoading, setButtonLoading] = useState(false);
-
-  // useEffect(() => {
-  //   setTimeout(() => setButtonLoading(!btnLoading), 5000);
-  //   console.log(ref.current ? ref.current.offsetWidth : 0);
-  // }, [btnLoading]);
-
   let onClickFn: Function;
 
+  //TODO: убрать на нормальный Event
   state === 'normal'
     ? (onClickFn = () => console.log(`${label} was clicked! Event - ${Event}`))
     : (onClickFn = () => {});
 
   return (
     <div
-      ref={ref}
       key={uniqueId()}
       className={classNames('btn', `size-${size}`, `shape-${shape}`, `${type}`, `${state}`, {
         isActiveAndNotLoading: !isDisabled && !isLoading,
         isActive: !isDisabled,
         isDisabled: isDisabled,
         isDisabledOrLoading: isDisabled || isLoading,
+        isLoading: isLoading,
       })}
+      onClick={() => onClickFn()}
     >
-      <div className={classNames({ ready: !isLoading })}>
-        <ButtonSpinner size={size} loading={isLoading} type={type} state={state} />
-        {!isLoading && (
-          <div className="btn-action" onClick={() => onClickFn()}>
-            {label}
-          </div>
-        )}
-      </div>
+      <ButtonSpinner size={size} loading={isLoading} type={type} state={state} />
+      <div className="btn-text">{label}</div>
     </div>
   );
 };

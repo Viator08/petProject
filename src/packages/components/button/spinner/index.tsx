@@ -11,25 +11,31 @@ export const ButtonSpinner: React.FC<{
   let loaderSize;
 
   if (size === 'medium') {
-    loaderSize = 25;
+    loaderSize = 20;
   } else if (size === 'large') {
-    loaderSize = 33;
+    loaderSize = 24;
   } else if (size === 'small') {
-    loaderSize = 15;
+    loaderSize = 16;
   }
 
   let color = 'white';
 
   if (type === 'primary' && state === 'ghost') {
-    color = '#4096ff';
+    color = 'blue';
+  } else if (state === 'danger') {
+    color = 'white';
   }
-  if (state === 'danger' && type !== 'primary') {
-    color = '#d4380d';
+  if (type === 'secondary') {
+    color = 'gray';
+    if (state === 'danger') {
+      color = 'red';
+    }
   }
-
   if (type === 'text' && state !== 'danger') {
-    color = 'rgba(0, 0, 0, 0.85)';
+    color = 'black';
   }
 
-  return loading ? <ClipLoader color={color} size={loaderSize} /> : null;
+  return loading && type !== 'link' && type !== 'text' ? (
+    <ClipLoader color={color} size={loaderSize} />
+  ) : null;
 };

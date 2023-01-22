@@ -66,6 +66,7 @@
     "node-sass": "^8.0.0",
     "prettier": "^2.8.1",
     "prop-types": "^15.8.1",
+    "resolve-url-loader": "^5.0.0",
     "sass": "^1.57.1",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
