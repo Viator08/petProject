@@ -1,6 +1,6 @@
 import { HTMLAttributes } from 'react';
 
-export type buttonDesignType = 'primary' | 'secondary' | 'link' | 'text';
+export type buttonDesignType = 'primary' | 'secondary';
 export type buttonDesignState = 'normal' | 'danger' | 'ghost';
 
 export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {

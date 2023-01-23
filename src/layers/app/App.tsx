@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Button } from './packages';
+import { UIComponents } from '../shared';
+
+const { Button } = UIComponents;
 
 class App extends Component {
   render() {

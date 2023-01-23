@@ -1,0 +1,42 @@
+@use '../../../styles/base.css';
+
+.color-black {
+  color: base.$blackText;
+}
+
+.color-primary {
+  color: base.$primary;
+
+  &.link.isNotClicked:hover {
+    color: base.$primary-5;
+  }
+
+  &.link.isClicked {
+    color: base.$primary-7;
+  }
+}
+
+.color-danger {
+  color: base.$dangerPrimary;
+
+  &.link.isNotClicked:hover {
+    color: base.$dangerPrimary-4;
+  }
+
+  &.link.isClicked {
+    color: base.$dangerPrimary-6;
+  }
+}
+
+.color-white {
+  color: base.$whiteText;
+}
+
+.link {
+  text-decoration: underline;
+}
+
+.isDisabled {
+  color: base.$grayText;
+  text-decoration: none;
+}
