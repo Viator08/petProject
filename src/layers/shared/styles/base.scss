@@ -1,8 +1,8 @@
-@import "colors";
-@import "mixins";
-@import "fonts";
+@import 'colors';
+@import 'mixins';
+@import 'fonts';
 
-body {
+* {
   font-family: Roboto;
   font-weight: 400;
 }

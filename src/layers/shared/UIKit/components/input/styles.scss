@@ -1,0 +1,15 @@
+@use '../../../styles/base.scss';
+@use '../../../styles/mixins.scss';
+@use '../styles.scss';
+
+.inputContainer {
+  @include mixins.flexCenter(column);
+}
+
+p.label {
+  margin: 0 5px 0 5px;
+}
+
+input {
+  @include styles.styledComponent();
+}

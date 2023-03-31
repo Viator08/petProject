@@ -1,31 +1,31 @@
-$path: 'src/layers/app/styles/fonts/roboto';
+$path: './fonts/roboto';
 
 @font-face {
-  src: url($path + '/Roboto-Thin.ttf') format('truetype');
+  src: url($path + '/Roboto-Thin.ttf') format('opentype');
   font-family: 'Roboto';
   font-weight: 100;
 }
 
 @font-face {
-  src: url($path + '/Roboto-Light.ttf') format('truetype');
+  src: url($path + '/Roboto-Light.ttf') format('opentype');
   font-family: 'Roboto';
   font-weight: 300;
 }
 
 @font-face {
-  src: url($path + '/Roboto-Regular.ttf') format('truetype');
+  src: url($path + '/Roboto-Regular.ttf') format('opentype');
   font-family: 'Roboto';
   font-weight: 400;
 }
 
 @font-face {
-  src: url($path + '/Roboto-Medium.ttf') format('truetype');
+  src: url($path + '/Roboto-Medium.ttf') format('opentype');
   font-family: 'Roboto';
   font-weight: 500;
 }
 
 @font-face {
-  src: url($path + '/Roboto-Bold.ttf') format('truetype');
+  src: url($path + '/Roboto-Bold.ttf') format('opentype');
   font-family: 'Roboto';
   font-weight: 700;
 }

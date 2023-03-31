@@ -1,0 +1,84 @@
+@use '../../styles/base.scss';
+
+@mixin styledComponent() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  transition: 0.5s;
+
+  &.isActive {
+    cursor: pointer;
+    &:hover {
+      filter: brightness(120%);
+    }
+    &:active {
+      transform: scale(0.96);
+    }
+
+    &.primary {
+      background-color: base.$primary;
+      border: 2px solid base.$primary-7;
+      color: base.$whiteText;
+
+      > .spinner {
+        > span {
+          background-color: white !important;
+        }
+      }
+    }
+
+    &.default {
+      background-color: white;
+      border: 2px solid base.$grayBorder;
+      color: base.$blackText;
+
+      &:hover {
+        filter: brightness(90%);
+      }
+
+      > .spinner {
+        > span {
+          background-color: base.$blackText !important;
+        }
+      }
+    }
+
+    &.danger {
+      background-color: base.$dangerPrimary;
+      border: 2px solid base.$dangerPrimary-6;
+      color: base.$whiteText;
+      &:hover {
+        filter: brightness(90%);
+      }
+
+      > .spinner {
+        > span {
+          background-color: base.$whiteText !important;
+        }
+      }
+    }
+  }
+
+  &.isDisabled {
+    background: base.$grayBackground;
+    color: base.$grayText;
+    border: 2px solid base.$grayBorder;
+  }
+
+  //size
+  &.standard {
+    padding: 5px 10px;
+    height: 40px;
+  }
+
+  &.large {
+    padding: 7px 20px;
+    height: 50px;
+  }
+
+  &.small {
+    padding: 2px 7px;
+    height: 30px;
+  }
+}

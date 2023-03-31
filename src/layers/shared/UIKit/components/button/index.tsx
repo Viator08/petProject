@@ -1,40 +1,43 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './styles.scss';
-import { ButtonProps } from './typings';
-import { uniqueId } from 'lodash';
-import { ButtonSpinner } from './spinner';
 import classNames from 'classnames';
+import { Event } from 'effector';
+import { PulseLoader } from 'react-spinners';
+import { size, type } from '../types';
 
-export const Button: React.FC<ButtonProps> = ({
+type ButtonProps = {
+  label: string;
+  type?: type;
+  size?: size;
+  shape?: 'standard' | 'circle' | 'square';
+  disabled?: boolean;
+  event?: Event<any>;
+  dataId?: string;
+  loading?: boolean;
+};
+
+export const Button = ({
   label,
   type = 'primary',
-  shape = 'standard',
   size = 'medium',
-  isLoading = false,
-  state = 'normal',
-  isDisabled = false,
+  shape = 'standard',
+  disabled = false,
+  event,
+  dataId,
+  loading = true,
 }: ButtonProps) => {
-  let onClickFn: Function;
-
-  //TODO: убрать на нормальный Event
-  state === 'normal'
-    ? (onClickFn = () => console.log(`${label} was clicked! Event - ${Event}`))
-    : (onClickFn = () => {});
-
   return (
-    <div
-      key={uniqueId()}
-      className={classNames('btn', `size-${size}`, `shape-${shape}`, `${type}`, `${state}`, {
-        isActiveAndNotLoading: !isDisabled && !isLoading,
-        isActive: !isDisabled,
-        isDisabled: isDisabled,
-        isDisabledOrLoading: isDisabled || isLoading,
-        isLoading: isLoading,
-      })}
-      onClick={() => onClickFn()}
+    <button
+      data-id={dataId}
+      disabled={disabled}
+      className={classNames(type, size, shape, { isActive: !disabled }, { isDisabled: disabled })}
+      onClick={event && (() => event())}
     >
-      <ButtonSpinner size={size} loading={isLoading} type={type} state={state} />
-      <div className="btn-text">{label}</div>
-    </div>
+      <PulseLoader
+        className={classNames('spinner', { isLoading: loading })}
+        size={size === 'large' ? 12 : 7}
+      />
+      <div className={classNames('label', { isLoading: loading })}>{label}</div>
+    </button>
   );
 };

@@ -1,262 +1,56 @@
-@use "../../../styles/base.css";
+@use '../../../styles/base.scss';
+@use '../styles.scss';
 
-.btn {
-  box-sizing: border-box;
-  margin: 2px;
+.spinner {
+  position: absolute;
+  display: flex !important;
+  align-items: center;
+  overflow: hidden;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  visibility: hidden;
 
-  font-weight: 400;
-  text-align: center;
-  word-wrap: inherit;
-  font-size: 14px;
-  line-height: 22px;
-
-  &.size-medium {
-    height: 32px;
-    padding: 4px 15px;
-  }
-
-  &.size-large {
-    height: 40px;
-    padding: 6px 15px;
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  &.size-small {
-    height: 22px;
-    padding: 0px 7px;
-  }
-
-
-}
-
-.primary {
-  &.normal {
-    &.isActive {
-      border: 1px solid base.$primary;
-      background: base.$primary;
-      box-shadow: 0px 2px 0px base.$shadow043;
-      color: base.$whiteText;
-
-      &.isActiveAndNotLoading {
-
-        &:hover {
-          background: base.$primary-5;
-        }
-
-        &:active {
-          background: base.$primary-7;
-          transform: scale(0.96);
-        }
-      }
-    }
-
-    &.isDisable {
-      background: base.$grayBackground;
-      border: 1px solid base.$grayBorder;
-    }
-  }
-
-  &.danger {
-    &.isActive {
-      background: base.$dangerPrimary;
-      box-shadow: 0px 2px 0px base.$shadow043;
-      color: base.$whiteText;
-
-      &.isActiveAndNotLoading {
-
-        &:hover {
-          background: base.$dangerPrimary-4;
-        }
-
-        &:active {
-          background: base.$dangerPrimary-6;
-          transform: scale(0.96);
-        }
-      }
-    }
-
-    &.isDisable {
-      background: base.$grayBackground;
-      border: 1px solid base.$grayBorder;
-    }
-  }
-
-  &.ghost {
-    &.isActive {
-      border: 1px solid base.$primary;
-      color: base.$primary;
-
-      &.isActiveAndNotLoading {
-
-        &:hover {
-          background: base.$primary-5;
-          color: white;
-        }
-
-        &:active {
-          background: base.$primary-7;
-          transform: scale(0.96);
-        }
-      }
-    }
-
-    &.isDisable {
-      background: base.$grayBackground;
-      border: 1px solid base.$grayBorder;
-    }
+  &.isLoading {
+    visibility: visible;
   }
 }
 
-
-.secondary {
-  &.normal {
-    &.isActive {
-      border: 1px solid base.$grayBorder;
-      background: white;
-      box-shadow: 0px 2px 0px base.$shadow016;
-      color: base.$blackText;
-
-      &.isActiveAndNotLoading {
-
-        &:hover {
-          border: 1px solid base.$grayBorder;
-          background: white;
-          box-shadow: 0px 2px 0px base.$shadow016;
-          color: base.$primary;
-        }
-
-        &:active {
-          background: base.$primary-7;
-          color: white;
-          transform: scale(0.96);
-        }
-      }
-    }
-
-    &.isDisable {
-      background: base.$grayBackground;
-      border: 1px solid base.$grayBorder;
-    }
-  }
-
-
-  &.danger {
-    &.isActive {
-      background: white;
-      border: 1px solid base.$dangerPrimary;
-      box-shadow: 0px 2px 0px base.$shadow016;
-      color: base.$dangerPrimary;
-
-      &.isActiveAndNotLoading {
-
-        &:hover {
-          border: 1px solid base.$dangerPrimary-4;
-          color: base.$dangerPrimary-4;
-        }
-
-        &:active {
-          border: 1px solid base.$dangerPrimary-4;
-          color: base.$dangerPrimary-4;
-          transform: scale(0.96);
-        }
-      }
-    }
-
-    &.isDisable {
-      background: base.$grayBackground;
-      border: 1px solid base.$grayBorder;
-    }
-  }
-
-
-  &.ghost {
-    &.isActive {
-      border: white;
-      color: white;
-
-      &.isActiveAndNotLoading {
-
-        &:hover {
-          border: base.$primary-5;
-          color: base.$primary-5;
-        }
-
-        &:active {
-          border: base.$primary-7;
-          color: base.$primary-7;
-          transform: scale(0.96);
-        }
-      }
-    }
-
-    &.isDisable {
-      border: 1px solid base.$grayBorder;
-    }
+.label {
+  display: flex !important;
+  align-items: center;
+  overflow: hidden;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  visibility: visible;
+  &.isLoading {
+    visibility: hidden;
   }
 }
 
-.link {
-  &.normal {
-    &.isActive {
-      color: base.$primary;
+button {
+  @include styles.styledComponent();
 
-      &:active {
-        color: base.$primary-7;
-      }
-    }
+  border-radius: 10px;
+
+  &.square {
+    border-radius: 0;
   }
 
-  &.danger {
-    &.isActive {
-      color: base.$dangerPrimary;
-
-      &:active {
-        color: base.$dangerPrimary-4;
-      }
+  &.circle {
+    border-radius: 100%;
+    &.large {
+      height: 89px;
+      width: 89px;
     }
-  }
-
-
-  &.ghost {
-    &.isActive {
-      color: base.$primary;
-
-      &:hover {
-        color: base.$primary-5;
-      }
-
-      &:active {
-        color: base.$primary-7;
-      }
+    &.small {
+      height: 40px;
+      width: 40px;
     }
-  }
-}
-
-.isDisable {
-  color: base.$grayText;
-}
-
-
-.shape-standard {
-  border-radius: 2px;
-}
-
-.shape-circle {
-  border-radius: 100px;
-}
-
-.isActiveAndNotLoading {
-  cursor: pointer;
-}
-
-.isDisabledOrLoading {
-  cursor: default;
-}
-
-.isLoading {
-  .btn-text {
-    z-index: -1;
-    color: white;
+    &.medium {
+      height: 55px;
+      width: 55px;
+    }
   }
 }
